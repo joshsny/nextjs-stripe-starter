@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
-import CustomDonationInput from '../components/CustomDonationInput'
-import StripeTestCards from '../components/StripeTestCards'
-import PrintObject from '../components/PrintObject'
+import CustomDonationInput from './CustomDonationInput'
+import StripeTestCards from './StripeTestCards'
+import PrintObject from './PrintObject'
 
-import { fetchPostJSON } from '../utils/api-helpers'
-import { formatAmountForDisplay } from '../utils/stripe-helpers'
-import * as config from '../config'
+import { fetchPostJSON } from '../../utils/api-helpers'
+import { formatAmountForDisplay } from '../../utils/stripe-helpers'
+import * as config from '../../config'
 
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 
@@ -83,7 +83,7 @@ const ElementsForm = () => {
     setPayment({ status: 'processing' })
 
     // Create a PaymentIntent with the specified amount.
-    const response = await fetchPostJSON('/api/payment_intents', {
+    const response = await fetchPostJSON('/stripe/payment_intents', {
       amount: input.customDonation,
     })
     setPayment(response)

@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import Link from 'next/link'
-import Layout from '../components/Layout'
+import Layout from '../components/stripe/Layout'
 
 const IndexPage: NextPage = () => {
   return (

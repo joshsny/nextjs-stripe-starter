@@ -1,10 +1,10 @@
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
-import Layout from '../components/Layout'
-import PrintObject from '../components/PrintObject'
-import Cart from '../components/Cart'
-import ClearCart from '../components/ClearCart'
+import Layout from '../components/stripe/Layout'
+import PrintObject from '../components/stripe/PrintObject'
+import Cart from '../components/stripe/Cart'
+import ClearCart from '../components/stripe/ClearCart'
 
 import { fetchGetJSON } from '../utils/api-helpers'
 import useSWR from 'swr'
@@ -16,7 +16,7 @@ const ResultPage: NextPage = () => {
   // https://nextjs.org/docs/basic-features/data-fetching#static-generation
   const { data, error } = useSWR(
     router.query.session_id
-      ? `/api/checkout_sessions/${router.query.session_id}`
+      ? `/api/stripe/checkout_sessions/${router.query.session_id}`
       : null,
     fetchGetJSON
   )

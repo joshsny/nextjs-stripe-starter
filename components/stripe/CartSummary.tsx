@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
-import StripeTestCards from '../components/StripeTestCards'
+import StripeTestCards from './StripeTestCards'
 
 import { useShoppingCart } from 'use-shopping-cart'
-import { fetchPostJSON } from '../utils/api-helpers'
+import { fetchPostJSON } from '../../utils/api-helpers'
 
 const CartSummary = () => {
   const [loading, setLoading] = useState(false)
@@ -25,7 +25,7 @@ const CartSummary = () => {
     setLoading(true)
 
     const response = await fetchPostJSON(
-      '/api/checkout_sessions/cart',
+      '/stripe/checkout_sessions/cart',
       cartDetails
     )
 

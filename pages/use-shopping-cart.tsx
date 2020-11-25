@@ -1,9 +1,9 @@
 import { NextPage } from 'next'
-import Layout from '../components/Layout'
+import Layout from '../components/stripe/Layout'
 
-import Cart from '../components/Cart'
-import CartSummary from '../components/CartSummary'
-import Products from '../components/Products'
+import Cart from '../components/stripe/Cart'
+import CartSummary from '../components/stripe/CartSummary'
+import Products from '../components/stripe/Products'
 
 const DonatePage: NextPage = () => {
   return (

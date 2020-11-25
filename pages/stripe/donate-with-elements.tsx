@@ -1,10 +1,10 @@
 import { NextPage } from 'next'
 
 import { Elements } from '@stripe/react-stripe-js'
-import getStripe from '../utils/get-stripejs'
+import getStripe from '../../utils/stripe/get-stripejs'
 
-import Layout from '../components/stripe/Layout'
-import ElementsForm from '../components/stripe/ElementsForm'
+import Layout from '../../components/stripe/Layout'
+import ElementsForm from '../../components/stripe/ElementsForm'
 
 const DonatePage: NextPage = () => {
   return (

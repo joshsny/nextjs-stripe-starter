@@ -1,12 +1,12 @@
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
-import Layout from '../components/stripe/Layout'
-import PrintObject from '../components/stripe/PrintObject'
-import Cart from '../components/stripe/Cart'
-import ClearCart from '../components/stripe/ClearCart'
+import Layout from '../../components/stripe/Layout'
+import PrintObject from '../../components/stripe/PrintObject'
+import Cart from '../../components/stripe/Cart'
+import ClearCart from '../../components/stripe/ClearCart'
 
-import { fetchGetJSON } from '../utils/api-helpers'
+import { fetchGetJSON } from '../../utils/stripe/api-helpers'
 import useSWR from 'swr'
 
 const ResultPage: NextPage = () => {
@@ -27,7 +27,7 @@ const ResultPage: NextPage = () => {
     <Layout title="Checkout Payment Result | Next.js + TypeScript Example">
       <div className="page-container">
         <h1>Checkout Payment Result</h1>
-        <h2>Status: {data?.payment_intent?.status ?? 'loading...'}</h2>
+        <h2>Status: {data?.payment_status ?? 'loading...'}</h2>
         <h3>CheckoutSession response:</h3>
         <PrintObject content={data ?? 'loading...'} />
         <Cart>

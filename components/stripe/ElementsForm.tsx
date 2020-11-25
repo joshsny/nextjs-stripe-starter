@@ -4,8 +4,8 @@ import CustomDonationInput from './CustomDonationInput'
 import StripeTestCards from './StripeTestCards'
 import PrintObject from './PrintObject'
 
-import { fetchPostJSON } from '../../utils/api-helpers'
-import { formatAmountForDisplay } from '../../utils/stripe-helpers'
+import { fetchPostJSON } from '../../utils/stripe/api-helpers'
+import { formatAmountForDisplay } from '../../utils/stripe/stripe-helpers'
 import * as config from '../../config'
 
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
@@ -83,7 +83,7 @@ const ElementsForm = () => {
     setPayment({ status: 'processing' })
 
     // Create a PaymentIntent with the specified amount.
-    const response = await fetchPostJSON('api/stripe/payment_intents', {
+    const response = await fetchPostJSON('/api/stripe/payment_intents', {
       amount: input.customDonation,
     })
     setPayment(response)

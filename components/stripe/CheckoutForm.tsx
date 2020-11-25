@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 import CustomDonationInput from './CustomDonationInput'
 import StripeTestCards from './StripeTestCards'
 
-import getStripe from '../../utils/get-stripejs'
-import { fetchPostJSON } from '../../utils/api-helpers'
-import { formatAmountForDisplay } from '../../utils/stripe-helpers'
+import getStripe from '../../utils/stripe/get-stripejs'
+import { fetchPostJSON } from '../../utils/stripe/api-helpers'
+import { formatAmountForDisplay } from '../../utils/stripe/stripe-helpers'
 import * as config from '../../config'
 
 const CheckoutForm = () => {

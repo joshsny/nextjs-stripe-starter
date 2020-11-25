@@ -25,7 +25,7 @@ const CartSummary = () => {
     setLoading(true)
 
     const response = await fetchPostJSON(
-      '/stripe/checkout_sessions/cart',
+      'api/stripe/checkout_sessions/cart',
       cartDetails
     )
 

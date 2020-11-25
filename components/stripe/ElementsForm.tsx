@@ -83,7 +83,7 @@ const ElementsForm = () => {
     setPayment({ status: 'processing' })
 
     // Create a PaymentIntent with the specified amount.
-    const response = await fetchPostJSON('/stripe/payment_intents', {
+    const response = await fetchPostJSON('api/stripe/payment_intents', {
       amount: input.customDonation,
     })
     setPayment(response)
